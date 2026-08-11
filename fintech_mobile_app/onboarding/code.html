@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Coinpay - Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#0b1c30",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#e5eeff",
+                      "primary": "#000000",
+                      "primary-fixed": "#d6e3ff",
+                      "on-tertiary": "#ffffff",
+                      "surface": "#f8f9ff",
+                      "surface-container-low": "#eff4ff",
+                      "tertiary-fixed-dim": "#c4c7c9",
+                      "inverse-surface": "#213145",
+                      "on-surface-variant": "#44474d",
+                      "on-primary-fixed-variant": "#39475f",
+                      "tertiary-container": "#191c1e",
+                      "secondary-container": "#00d2fd",
+                      "secondary-fixed-dim": "#3cd7ff",
+                      "outline-variant": "#c5c6cd",
+                      "primary-fixed-dim": "#b9c7e4",
+                      "on-tertiary-fixed": "#191c1e",
+                      "primary-container": "#0d1c32",
+                      "outline": "#75777e",
+                      "tertiary-fixed": "#e0e3e5",
+                      "on-error": "#ffffff",
+                      "surface-dim": "#cbdbf5",
+                      "secondary": "#00677e",
+                      "on-secondary-container": "#005669",
+                      "surface-container-high": "#dce9ff",
+                      "on-error-container": "#93000a",
+                      "inverse-primary": "#b9c7e4",
+                      "background": "#f8f9ff",
+                      "surface-variant": "#d3e4fe",
+                      "on-surface": "#0b1c30",
+                      "surface-container-highest": "#d3e4fe",
+                      "secondary-fixed": "#b4ebff",
+                      "surface-bright": "#f8f9ff",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed": "#0d1c32",
+                      "on-tertiary-container": "#818486",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed-variant": "#444749",
+                      "on-secondary-fixed": "#001f27",
+                      "inverse-on-surface": "#eaf1ff",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary": "#000000",
+                      "on-primary": "#ffffff",
+                      "surface-tint": "#515f78",
+                      "on-secondary-fixed-variant": "#004e5f",
+                      "on-primary-container": "#76849f"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-padding": "16px",
+                      "stack-sm": "8px",
+                      "gutter": "16px",
+                      "stack-md": "16px",
+                      "base": "4px",
+                      "margin-mobile": "20px",
+                      "stack-lg": "24px"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "numeric-display": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "26px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "numeric-display": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .carousel-container {
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .carousel-container::-webkit-scrollbar {
+            display: none;
+        }
+        .carousel-slide {
+            scroll-snap-align: center;
+        }
+        .dot-indicator {
+            transition: all 0.3s ease;
+        }
+        .dot-indicator.active {
+            width: 24px;
+            background-color: #00D4FF; /* Secondary-container / Cyan accent */
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-lg h-screen w-full flex flex-col overflow-hidden m-0 p-0">
+<!-- Header Section -->
+<header class="flex justify-between items-center px-margin-mobile py-4 w-full z-10 sticky top-0 bg-transparent">
+<div class="font-headline-md text-headline-md font-bold text-on-background">Coinpay</div>
+<button class="font-body-lg text-body-lg text-on-surface-variant hover:text-on-background transition-colors duration-200" id="skip-btn">Skip</button>
+</header>
+<!-- Main Content: Carousel -->
+<main class="flex-grow flex flex-col relative w-full overflow-hidden">
+<div class="carousel-container flex w-full h-full overflow-x-auto snap-x snap-mandatory" id="carousel">
+<!-- Slide 1: Easy Payments -->
+<div class="carousel-slide min-w-full h-full flex flex-col items-center justify-center px-margin-mobile pb-24 snap-center relative">
+<div class="w-full h-1/2 rounded-xl mb-stack-lg overflow-hidden relative shadow-[0_8px_24px_rgba(10,25,47,0.08)] bg-white flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A clean, modern 3D illustration of a smartphone screen displaying a seamless financial transaction. Soft, diffused lighting creates a high-trust, professional atmosphere. The color palette features deep indigo backgrounds with vibrant cyan glowing accents highlighting the payment flow, conveying speed and modern fintech aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB19sUR8o1asqS-Z8Mcgg-5PSkBnMrOokzhESSbeUdBzuuxedbBXSzgKmSIg5PugagZEuJ_-fiOyyYw-HDZBt1DdvXa4MM1AcnedX2XhpXjBTO-oPwTJWBN-hCZynPPRmQZvwiCzjrpYq7bAlY6R0t5_btXE89AhwSrRJ54H3vhCwSYHUuZVmAWN9oCJrjj9udBn0IG0QWo-l4fsdjNpZFQUAQQrLCubJtU0Tii94q7E29ZcRxE6qj9SQ"/>
+</div>
+<div class="text-center w-full max-w-md mx-auto">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background mb-stack-sm font-bold">Easy Payments</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Send and receive money instantly with zero hassle. Experience the fastest way to handle your daily transactions.</p>
+</div>
+</div>
+<!-- Slide 2: Secure Storage -->
+<div class="carousel-slide min-w-full h-full flex flex-col items-center justify-center px-margin-mobile pb-24 snap-center relative">
+<div class="w-full h-1/2 rounded-xl mb-stack-lg overflow-hidden relative shadow-[0_8px_24px_rgba(10,25,47,0.08)] bg-white flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A sophisticated abstract 3D render representing digital security and safe storage. A glowing cyan lock mechanism floats above a sleek, dark navy geometric vault structure. High-end lighting emphasizing reliability and institutional trust, suitable for a premium fintech application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtS0Yw2tWg6slsqyEhuHE4XpNC5UrDraoAG4_Uh00a0d17W2BlZxdtsOF-a_CaskoDhaut8XD0fflxU0uIKn2WJ0a0qTU6Rr9d2W1QuuaIYcAbVioqd0FWe4k9CaMD2f-iS0WN3LuS6g9DKqlo8dlH22i6etAXMP0lHhPV_t1LLmVxjdLJSoH9oJsEIMic-SvTeDKc7GFRTXSMbdedN-Uda5uL3AzOO4A6zAuJ9bjqXFao4wp5XpfaVQ"/>
+</div>
+<div class="text-center w-full max-w-md mx-auto">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background mb-stack-sm font-bold">Secure Storage</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Your assets are protected by industry-leading encryption. We prioritize your financial security above all else.</p>
+</div>
+</div>
+<!-- Slide 3: Global Transfers -->
+<div class="carousel-slide min-w-full h-full flex flex-col items-center justify-center px-margin-mobile pb-24 snap-center relative">
+<div class="w-full h-1/2 rounded-xl mb-stack-lg overflow-hidden relative shadow-[0_8px_24px_rgba(10,25,47,0.08)] bg-white flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A highly detailed, stylized glowing wireframe globe surrounded by fast-moving abstract light trails in cyan and deep navy. This modern, minimalist 3D illustration conveys international connectivity and high-speed global financial transfers in a polished corporate tech style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJbHevdV4eWoLGkantCQoZ2Y4GajGhCQG3PD2awXNGszsQp0gsEewWXauk8HjsmfvNsrMKpLvjA9fdRc9-JSWvNDt85aB35SP3264xuxf5J-6Ktz4FlcO4TGM94Wzywyp1MTvijuR7-SnnsYgH_kXTrvpcHnEn_3YrB56bgJLL5ZEgJh2kQyKVwqCZBpvs6WTycOfwdZz67cC-CDFqlVJdt_VxCpoGhezvay6m-JLiJFGgADpX68w1sg"/>
+</div>
+<div class="text-center w-full max-w-md mx-auto">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background mb-stack-sm font-bold">Global Transfers</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Send money across borders with competitive rates and zero hidden fees. Connect with the world seamlessly.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Action Area -->
+<div class="fixed bottom-0 left-0 w-full px-margin-mobile pb-[env(safe-area-inset-bottom,24px)] pt-stack-md bg-gradient-to-t from-background via-background to-transparent z-20 flex flex-col items-center">
+<!-- Pagination Dots -->
+<div class="flex space-x-2 mb-stack-md" id="pagination-dots">
+<div class="dot-indicator h-2 w-2 rounded-full bg-secondary-container active" data-index="0"></div>
+<div class="dot-indicator h-2 w-2 rounded-full bg-outline-variant" data-index="1"></div>
+<div class="dot-indicator h-2 w-2 rounded-full bg-outline-variant" data-index="2"></div>
+</div>
+<!-- Action Button -->
+<div class="w-full max-w-md mx-auto">
+<button class="w-full bg-[#00D4FF] text-[#0A192F] font-headline-md text-headline-md font-bold h-14 rounded-xl flex items-center justify-center hover:opacity-90 active:translate-y-px transition-all duration-200" id="next-btn">
+                Next
+            </button>
+</div>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.getElementById('carousel');
+            const dots = document.querySelectorAll('.dot-indicator');
+            const nextBtn = document.getElementById('next-btn');
+            const skipBtn = document.getElementById('skip-btn');
+            
+            let currentSlide = 0;
+            const totalSlides = dots.length;
+
+            // Update dots based on scroll position
+            carousel.addEventListener('scroll', () => {
+                const scrollPosition = carousel.scrollLeft;
+                const slideWidth = carousel.clientWidth;
+                currentSlide = Math.round(scrollPosition / slideWidth);
+                
+                updateUI();
+            });
+
+            function updateUI() {
+                // Update dots
+                dots.forEach((dot, index) => {
+                    if (index === currentSlide) {
+                        dot.classList.add('active');
+                        dot.classList.remove('bg-outline-variant');
+                        dot.classList.add('bg-secondary-container');
+                        dot.style.width = '24px';
+                    } else {
+                        dot.classList.remove('active');
+                        dot.classList.add('bg-outline-variant');
+                        dot.classList.remove('bg-secondary-container');
+                        dot.style.width = '8px';
+                    }
+                });
+
+                // Update Button Text
+                if (currentSlide === totalSlides - 1) {
+                    nextBtn.textContent = 'Get Started';
+                } else {
+                    nextBtn.textContent = 'Next';
+                }
+            }
+
+            // Next Button Click
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    const slideWidth = carousel.clientWidth;
+                    carousel.scrollTo({
+                        left: currentSlide * slideWidth,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // Handle 'Get Started' action here
+                    console.log('Proceed to app');
+                    // e.g., window.location.href = '/home';
+                }
+            });
+
+            // Skip Button Click
+            skipBtn.addEventListener('click', () => {
+                // Handle Skip action here
+                console.log('Skip onboarding');
+                // e.g., window.location.href = '/home';
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Coinpay - Transaction Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#0b1c30",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "primary": "#000000",
+                        "primary-fixed": "#d6e3ff",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "surface-container-low": "#eff4ff",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "inverse-surface": "#213145",
+                        "on-surface-variant": "#44474d",
+                        "on-primary-fixed-variant": "#39475f",
+                        "tertiary-container": "#191c1e",
+                        "secondary-container": "#00d2fd",
+                        "secondary-fixed-dim": "#3cd7ff",
+                        "outline-variant": "#c5c6cd",
+                        "primary-fixed-dim": "#b9c7e4",
+                        "on-tertiary-fixed": "#191c1e",
+                        "primary-container": "#0d1c32",
+                        "outline": "#75777e",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "secondary": "#00677e",
+                        "on-secondary-container": "#005669",
+                        "surface-container-high": "#dce9ff",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#b9c7e4",
+                        "background": "#f8f9ff",
+                        "surface-variant": "#d3e4fe",
+                        "on-surface": "#0b1c30",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-fixed": "#b4ebff",
+                        "surface-bright": "#f8f9ff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#0d1c32",
+                        "on-tertiary-container": "#818486",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-secondary-fixed": "#001f27",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#000000",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#515f78",
+                        "on-secondary-fixed-variant": "#004e5f",
+                        "on-primary-container": "#76849f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding": "16px",
+                        "stack-sm": "8px",
+                        "gutter": "16px",
+                        "stack-md": "16px",
+                        "base": "4px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "numeric-display": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "numeric-display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #f8f9ff; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .btn-press:active { transform: translateY(1px); box-shadow: none; }
+        .glass-card { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+    </style>
+</head>
+<body class="text-on-surface font-body-lg antialiased flex flex-col min-h-screen">
+<!-- Top App Bar (Modified for Details Screen - Back button instead of Avatar/Notification) -->
+<header class="w-full top-0 sticky z-50 bg-surface dark:bg-on-background flex justify-between items-center px-margin-mobile py-4 shadow-sm border-b border-surface-container-highest">
+<button aria-label="Go back" class="text-on-surface hover:opacity-80 transition-opacity active:scale-95 flex items-center justify-center p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface absolute left-1/2 transform -translate-x-1/2">Transaction Details</h1>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow flex flex-col px-margin-mobile pt-stack-lg pb-32 max-w-lg mx-auto w-full gap-stack-lg">
+<!-- Header / Amount Section -->
+<section class="flex flex-col items-center text-center gap-stack-sm pt-4">
+<div class="w-20 h-20 rounded-full bg-surface-container flex items-center justify-center mb-2 shadow-sm overflow-hidden border-2 border-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist logo of a modern coffee shop named 'Artisan Roasters'. High-contrast black and white vector art style. Placed in a circular frame. Perfect for a fintech app merchant identifier. Authoritative yet accessible aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiWBn99H1n85KuXxSALG28Xbg3JVFQ-TpordYoXMITTx1TrYKvA3sqnHcnLjHkHt40mnmURVqzVAJkf5lY13eBXnzzTM2h1nthIHWDINmPXscg2PJDJjfJbTD3qu86ScUZ_2PaHkFcU50qdfm2abQmEjP1dtluWwMaQgjS9VvVOxXn3VcaHY-1-nJ60M-4pq0tkWA1s_Y7SZpFUdadIDQdXsAn-FM5gI1YfJR_PQvRGigmOf-CvOLFYw"/>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Artisan Roasters</h2>
+<p class="font-numeric-display text-numeric-display text-on-surface mt-2">-$14.50</p>
+<div class="inline-flex items-center gap-2 bg-secondary-container/10 px-3 py-1 rounded-full mt-2">
+<span class="material-symbols-outlined text-[16px] text-secondary-container" data-icon="check_circle" data-weight="fill">check_circle</span>
+<span class="font-label-caps text-label-caps text-secondary-container">Completed</span>
+</div>
+</section>
+<!-- Bento Grid Details -->
+<section class="grid grid-cols-2 gap-stack-md mt-4">
+<!-- Date & Time -->
+<div class="col-span-1 bg-surface-container-lowest rounded-xl p-4 shadow-[0_4px_12px_rgba(10,25,47,0.04)] border border-surface-container-low flex flex-col justify-between">
+<span class="material-symbols-outlined text-outline mb-2" data-icon="calendar_month">calendar_month</span>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Date &amp; Time</p>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold mt-1">Oct 24, 2023<br/><span class="text-sm font-normal text-on-surface-variant">08:42 AM</span></p>
+</div>
+</div>
+<!-- Transaction ID -->
+<div class="col-span-1 bg-surface-container-lowest rounded-xl p-4 shadow-[0_4px_12px_rgba(10,25,47,0.04)] border border-surface-container-low flex flex-col justify-between">
+<span class="material-symbols-outlined text-outline mb-2" data-icon="receipt_long">receipt_long</span>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Transaction ID</p>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold mt-1 truncate">#TRX-8921-A</p>
+</div>
+</div>
+<!-- Payment Method -->
+<div class="col-span-2 bg-surface-container-lowest rounded-xl p-4 shadow-[0_4px_12px_rgba(10,25,47,0.04)] border border-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface" data-icon="credit_card">credit_card</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Payment Method</p>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">Visa ending in 4242</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Location Map -->
+<section class="w-full bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(10,25,47,0.04)] border border-surface-container-low">
+<div class="p-4 border-b border-surface-container-low flex items-center gap-2">
+<span class="material-symbols-outlined text-outline" data-icon="location_on">location_on</span>
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface">Location</h3>
+</div>
+<div class="w-full h-40 bg-surface-variant relative">
+<img class="w-full h-full object-cover" data-alt="A top-down map view of a city block in Seattle. The map style is sleek, minimalist, and optimized for a light-mode fintech interface. Roads are light grey, blocks are soft white, and a single subtle teal pin indicates the location of a merchant. High-trust, professional aesthetic." data-location="Seattle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCFP43P9DL3DDxrchYkdIik3kt7USsVszemF4v81R0VMkLhlqqdrMu9CBtUpkR0JQLKiaaTJOn0H-ovmBc8ZsYzyNn86owgrAtjk3FRyplTOFl-GNvj50ZyCJUmwS4pWpQj3HNjaLzV1XStbG6jF1s3Avv7xLmTaM6YegltUEh8Fnl7kMNdYIRCJdjvR_-IXeTYRhVrEhiLkIY3csMjLjiw3Nw904TdOVPtZ9v3-WLs5U9juizQJJ7pA"/>
+</div>
+<div class="p-4 bg-surface-container-lowest">
+<p class="font-body-sm text-body-sm text-on-surface-variant">123 Pine St, Seattle, WA 98101</p>
+</div>
+</section>
+<!-- Actions -->
+<section class="flex flex-col gap-stack-md mt-4">
+<button class="w-full h-[56px] rounded-xl bg-secondary-container text-on-background font-body-lg text-body-lg font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-all btn-press shadow-md">
+<span class="material-symbols-outlined" data-icon="replay">replay</span>
+                Repeat Transaction
+            </button>
+<button class="w-full h-[56px] rounded-xl bg-transparent border-2 border-primary text-primary font-body-lg text-body-lg font-semibold flex items-center justify-center gap-2 hover:bg-surface-container transition-all btn-press">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+                Download Receipt
+            </button>
+</section>
+<div class="text-center mt-2">
+<a class="font-body-sm text-body-sm text-secondary hover:underline" href="#">Report an issue</a>
+</div>
+</main>
+<!-- Suppressed Bottom Navigation: 
+         "Automatic Suppression: You MUST exclude the navigation shell if the page intent is: ... Task-Focused: Any sub-page featuring a 'Close' or 'Back' action that implies a temporary departure from the main navigation flow."
+         This is a Transaction Details screen, a clear dead-end sub-page.
+    -->
+</body></html>

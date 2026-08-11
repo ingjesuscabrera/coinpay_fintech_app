@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Coinpay - Homepage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#0b1c30",
+                      "on-secondary": "#ffffff",
+                      "surface-container": "#e5eeff",
+                      "primary": "#000000",
+                      "primary-fixed": "#d6e3ff",
+                      "on-tertiary": "#ffffff",
+                      "surface": "#f8f9ff",
+                      "surface-container-low": "#eff4ff",
+                      "tertiary-fixed-dim": "#c4c7c9",
+                      "inverse-surface": "#213145",
+                      "on-surface-variant": "#44474d",
+                      "on-primary-fixed-variant": "#39475f",
+                      "tertiary-container": "#191c1e",
+                      "secondary-container": "#00d2fd",
+                      "secondary-fixed-dim": "#3cd7ff",
+                      "outline-variant": "#c5c6cd",
+                      "primary-fixed-dim": "#b9c7e4",
+                      "on-tertiary-fixed": "#191c1e",
+                      "primary-container": "#0d1c32",
+                      "outline": "#75777e",
+                      "tertiary-fixed": "#e0e3e5",
+                      "on-error": "#ffffff",
+                      "surface-dim": "#cbdbf5",
+                      "secondary": "#00677e",
+                      "on-secondary-container": "#005669",
+                      "surface-container-high": "#dce9ff",
+                      "on-error-container": "#93000a",
+                      "inverse-primary": "#b9c7e4",
+                      "background": "#f8f9ff",
+                      "surface-variant": "#d3e4fe",
+                      "on-surface": "#0b1c30",
+                      "surface-container-highest": "#d3e4fe",
+                      "secondary-fixed": "#b4ebff",
+                      "surface-bright": "#f8f9ff",
+                      "error-container": "#ffdad6",
+                      "on-primary-fixed": "#0d1c32",
+                      "on-tertiary-container": "#818486",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed-variant": "#444749",
+                      "on-secondary-fixed": "#001f27",
+                      "inverse-on-surface": "#eaf1ff",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary": "#000000",
+                      "on-primary": "#ffffff",
+                      "surface-tint": "#515f78",
+                      "on-secondary-fixed-variant": "#004e5f",
+                      "on-primary-container": "#76849f"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-padding": "16px",
+                      "stack-sm": "8px",
+                      "gutter": "16px",
+                      "stack-md": "16px",
+                      "base": "4px",
+                      "margin-mobile": "20px",
+                      "stack-lg": "24px"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "numeric-display": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "26px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "numeric-display": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      }
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .shadow-elevation-1 { box-shadow: 0 4px 12px rgba(10, 25, 47, 0.04); }
+        .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+      </style>
+</head>
+<body class="bg-background text-on-background font-body-lg min-h-screen pb-24 relative overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-40 bg-surface dark:bg-on-background flat no shadows">
+<div class="flex justify-between items-center px-margin-mobile py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-stack-sm">
+<img alt="User profile photo" class="w-10 h-10 rounded-full object-cover shadow-elevation-1 cursor-pointer hover:opacity-80 transition-opacity active:translate-y-px transition-transform duration-100" data-alt="A small, professional portrait photograph of a diverse person smiling softly, suitable for a user profile avatar in a minimalist modern fintech application. The lighting is studio quality, soft and even, highlighting their features against a neutral background. The mood is approachable and trustworthy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRisnt2NFqnLePI38jlW5WAgSKdHnsKeI4kT266ubzBx472HHyQ_bwmMm_fv6mVSPQi0zfGz4qA5akSoIqFMJA5KmHonc0UvrW8hxdoa9CSeLYaYV9D6OZRd8NNVDV6Hn2zJrC8YMs3ptKv9Oonjw2WHOOsmT4iLMn2YqksrbWmJDTI6B9DeTK0HJMlvPOXzUoW5bHZr0kvv1jt9Qiai3Q5bw3XnF9bDoCOi_DJy2peqX4dB2wEwIMQQ"/>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-on-surface dark:text-inverse-on-surface">
+                Coinpay
+            </div>
+<button aria-label="notifications" class="w-10 h-10 flex items-center justify-center rounded-full text-secondary dark:text-secondary-fixed-dim hover:opacity-80 transition-opacity active:translate-y-px transition-transform duration-100 bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile pt-stack-sm pb-stack-lg space-y-stack-lg">
+<!-- Balance Card -->
+<section class="bg-primary-container text-on-primary rounded-xl p-container-padding shadow-elevation-1 relative overflow-hidden">
+<!-- decorative background -->
+<div class="absolute top-0 right-0 w-48 h-48 bg-secondary-container opacity-20 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
+<div class="relative z-10 flex justify-between items-start mb-stack-md">
+<div>
+<h2 class="font-body-sm text-body-sm text-on-primary-container mb-1">Total Balance</h2>
+<div class="flex items-baseline gap-2">
+<span class="font-numeric-display text-numeric-display text-on-primary">$12,450.00</span>
+</div>
+</div>
+<div class="bg-surface/10 rounded-full p-1 flex">
+<button class="px-3 py-1 bg-surface text-on-surface rounded-full font-label-caps text-label-caps">USD</button>
+<button class="px-3 py-1 text-on-primary/70 hover:text-on-primary rounded-full font-label-caps text-label-caps transition-colors">EUR</button>
+</div>
+</div>
+<div class="relative z-10 flex justify-between items-end mt-stack-md pt-stack-md border-t border-on-primary/10">
+<div>
+<span class="text-secondary-fixed-dim font-label-caps text-label-caps flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> +2.4% this week
+                    </span>
+</div>
+<button class="text-secondary-fixed-dim font-label-caps text-label-caps flex items-center gap-1 hover:text-secondary-fixed transition-colors">
+                    View Analytics <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Quick Actions Bento -->
+<section class="grid grid-cols-4 gap-gutter">
+<button class="flex flex-col items-center justify-center gap-stack-sm group">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-on-background group-hover:bg-secondary-container group-hover:text-primary transition-colors shadow-elevation-1 active:translate-y-px">
+<span class="material-symbols-outlined">send</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Send</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-stack-sm group">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-on-background group-hover:bg-secondary-container group-hover:text-primary transition-colors shadow-elevation-1 active:translate-y-px">
+<span class="material-symbols-outlined">download</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Receive</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-stack-sm group">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-on-background group-hover:bg-secondary-container group-hover:text-primary transition-colors shadow-elevation-1 active:translate-y-px">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Pay</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-stack-sm group">
+<div class="w-14 h-14 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface-variant group-hover:bg-surface-variant transition-colors active:translate-y-px">
+<span class="material-symbols-outlined">grid_view</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">More</span>
+</button>
+</section>
+<!-- Recent Transactions -->
+<section>
+<div class="flex justify-between items-center mb-stack-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent Transactions</h3>
+<button class="font-label-caps text-label-caps text-secondary hover:text-secondary-container transition-colors">See All</button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-elevation-1 overflow-hidden">
+<ul class="divide-y divide-outline-variant/30">
+<!-- Transaction Item 1 -->
+<li class="flex items-center justify-between p-container-padding hover:bg-surface-container-low/50 transition-colors cursor-pointer min-h-[72px]">
+<div class="flex items-center gap-stack-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-weight="fill">storefront</span>
+</div>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">Whole Foods Market</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Today, 2:45 PM</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">-$84.20</p>
+</div>
+</li>
+<!-- Transaction Item 2 -->
+<li class="flex items-center justify-between p-container-padding hover:bg-surface-container-low/50 transition-colors cursor-pointer min-h-[72px]">
+<div class="flex items-center gap-stack-md">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">Alex Johnson</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Yesterday, 10:20 AM</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-body-lg text-body-lg text-secondary font-semibold">+$150.00</p>
+<span class="inline-block mt-1 font-label-caps text-label-caps text-secondary bg-secondary-container/20 px-2 py-0.5 rounded-full">Received</span>
+</div>
+</li>
+<!-- Transaction Item 3 -->
+<li class="flex items-center justify-between p-container-padding hover:bg-surface-container-low/50 transition-colors cursor-pointer min-h-[72px]">
+<div class="flex items-center gap-stack-md">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-weight="fill">subscriptions</span>
+</div>
+<div>
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">Netflix Subscription</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Oct 24, 2023</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">-$15.99</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-surface-container-lowest/80 dark:bg-on-background/80 glass-nav shadow-[0_-4px_12px_rgba(10,25,47,0.04)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary-container font-bold bg-secondary-container/10 rounded-xl px-3 py-1 hover:text-secondary dark:hover:text-secondary-fixed active:scale-95 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-caps text-label-caps">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-3 py-1 hover:text-secondary dark:hover:text-secondary-fixed active:scale-95 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-caps text-label-caps">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-3 py-1 hover:text-secondary dark:hover:text-secondary-fixed active:scale-95 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="credit_card">credit_card</span>
+<span class="font-label-caps text-label-caps">Cards</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-3 py-1 hover:text-secondary dark:hover:text-secondary-fixed active:scale-95 transition-all duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-caps text-label-caps">Profile</span>
+</a>
+</nav>
+</body></html>

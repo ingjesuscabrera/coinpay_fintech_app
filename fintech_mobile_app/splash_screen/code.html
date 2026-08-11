@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Coinpay - Loading</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#0b1c30",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "primary": "#000000",
+                        "primary-fixed": "#d6e3ff",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "surface-container-low": "#eff4ff",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "inverse-surface": "#213145",
+                        "on-surface-variant": "#44474d",
+                        "on-primary-fixed-variant": "#39475f",
+                        "tertiary-container": "#191c1e",
+                        "secondary-container": "#00d2fd",
+                        "secondary-fixed-dim": "#3cd7ff",
+                        "outline-variant": "#c5c6cd",
+                        "primary-fixed-dim": "#b9c7e4",
+                        "on-tertiary-fixed": "#191c1e",
+                        "primary-container": "#0d1c32",
+                        "outline": "#75777e",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "secondary": "#00677e",
+                        "on-secondary-container": "#005669",
+                        "surface-container-high": "#dce9ff",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#b9c7e4",
+                        "background": "#f8f9ff",
+                        "surface-variant": "#d3e4fe",
+                        "on-surface": "#0b1c30",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-fixed": "#b4ebff",
+                        "surface-bright": "#f8f9ff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#0d1c32",
+                        "on-tertiary-container": "#818486",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-secondary-fixed": "#001f27",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#000000",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#515f78",
+                        "on-secondary-fixed-variant": "#004e5f",
+                        "on-primary-container": "#76849f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding": "16px",
+                        "stack-sm": "8px",
+                        "gutter": "16px",
+                        "stack-md": "16px",
+                        "base": "4px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "numeric-display": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "numeric-display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .loading-bar-container {
+            width: 200px;
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 9999px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .loading-bar {
+            height: 100%;
+            background-color: #00D4FF; /* Electric Teal Accent */
+            border-radius: 9999px;
+            width: 0%;
+            animation: load 2s ease-in-out infinite;
+        }
+
+        @keyframes load {
+            0% { width: 0%; transform: translateX(-100%); }
+            50% { width: 50%; transform: translateX(50%); }
+            100% { width: 100%; transform: translateX(200%); }
+        }
+
+        .pulse-logo {
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.02); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-primary-container h-screen w-screen flex flex-col items-center justify-center m-0 overflow-hidden relative">
+<!-- Ambient background glows -->
+<div class="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-secondary-container/20 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] bg-primary/30 rounded-full blur-[100px] pointer-events-none"></div>
+<!-- Main Content -->
+<div class="flex flex-col items-center justify-center flex-1 z-10">
+<!-- Logo & Brand -->
+<div class="flex flex-col items-center pulse-logo mb-12">
+<!-- Icon/Mark -->
+<div class="w-24 h-24 bg-surface rounded-3xl flex items-center justify-center shadow-[0_8px_24px_rgba(0,0,0,0.4)] mb-stack-md">
+<span class="material-symbols-outlined text-[48px] text-secondary" style="font-variation-settings: 'FILL' 1;">
+                    account_balance_wallet
+                </span>
+</div>
+<!-- Typography -->
+<h1 class="font-headline-lg text-headline-lg text-on-primary">Coinpay</h1>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim mt-stack-sm tracking-wide opacity-80">Secure. Fast. Global.</p>
+</div>
+</div>
+<!-- Bottom Loading Indicator -->
+<div class="absolute bottom-margin-mobile left-0 w-full flex flex-col items-center justify-center pb-8 z-10">
+<div class="loading-bar-container shadow-[0_4px_12px_rgba(0,212,255,0.2)]">
+<div class="loading-bar"></div>
+</div>
+<span class="font-label-caps text-label-caps text-primary-fixed-dim mt-4 opacity-50 uppercase tracking-widest">Initializing Secure Connection</span>
+</div>
+</body></html>
