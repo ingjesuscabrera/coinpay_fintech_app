@@ -49,7 +49,53 @@ El diseño está inspirado en interfaces limpias y modernas para apps fintech. E
 - `lib/main.dart`: punto de entrada principal de la aplicación
 - `lib/app_router.dart`: configuración de rutas y navegación
 - `lib/screens/`: pantallas de la aplicación
-- `assets/`: recursos gráficos y imágenes del diseño (si los agregas)
+- `fintech_mobile_app/`: diseños por pantalla en formato web/html
+- `assets/`: recursos gráficos y capturas de pantalla del diseño (si los agregas)
+
+### Pantallas implementadas en `lib/screens/`
+
+- `splash_screen.dart`
+- `onboarding_screen.dart`
+- `registration_screen.dart`
+- `account_setup_screen.dart`
+- `account_verification_screen.dart`
+- `pin_setup_screen.dart`
+- `welcome_screen.dart`
+- `login_screen.dart`
+- `adding_card_screen.dart`
+- `homepage_screen.dart`
+- `send_money_screen.dart`
+- `receive_money_screen.dart`
+- `profile_screen.dart`
+- `support_screen.dart`
+- `transaction_details_screen.dart`
+- `not_found_screen.dart`
+
+---
+
+## 🎨 Diseños disponibles en `fintech_mobile_app/`
+
+Cada carpeta dentro de `fintech_mobile_app/` contiene el diseño de una pantalla específica:
+
+- `404_error/`
+- `account_setup/`
+- `account_verification/`
+- `adding_card/`
+- `coinpay_digital_finance/`
+- `homepage/`
+- `log_in/`
+- `onboarding/`
+- `pin_setup/`
+- `profile/`
+- `receive_money/`
+- `registration/`
+- `send_money/`
+- `splash_screen/`
+- `support/`
+- `transaction_details/`
+- `welcome/`
+
+Estas carpetas contienen las maquetas de cada página, por lo que puedes utilizarlas como referencia visual al subir el repositorio.
 
 ---
 
@@ -57,8 +103,9 @@ El diseño está inspirado en interfaces limpias y modernas para apps fintech. E
 
 Agrega aquí las capturas de pantalla del diseño para que se muestren en GitHub. Por ejemplo:
 
-- `assets/screenshots/login.png`
-- `assets/screenshots/signup.png`
+- `assets/screenshots/splash_screen.png`
+- `assets/screenshots/onboarding.png`
+- `assets/screenshots/registration.png`
 - `assets/screenshots/profile.png`
 - `assets/screenshots/homepage.png`
 
